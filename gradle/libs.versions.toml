@@ -9,6 +9,8 @@ espressoCore = "3.5.1"
 core-ktx = "1.12.0"
 appcompat = "1.6.1"
 material = "1.11.0"
+hilt = "2.48"
+ksp = "1.9.20-1.0.14"
 kotlinCompilerExtension = "1.4.3"
 
 [libraries]
@@ -25,18 +27,26 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+# dagger hilt
+hilt-android = {group = "com.google.dagger", name = "hilt-android", version.ref="hilt"}
+hilt-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref="hilt"}
+
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id ="com.android.library", version.ref = "androidGradlePlugin" }
+android-dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+android-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # custom plugins defined
 common-android-library-compose = { id = "gradlePlugins.android.library.compose", version = "unspecified" }
 common-android-application-compose = { id = "gradlePlugins.android.application.compose", version = "unspecified" }
 common-android-application = { id = "gradlePlugins.android.application", version = "unspecified" }
 common-android-library = { id = "gradlePlugins.android.library", version = "unspecified" }
+common-android-hilt = { id = "gradlePlugins.android.hilt", version = "unspecified" }

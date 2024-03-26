@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     `kotlin-dsl`
 }
@@ -11,6 +9,7 @@ repositories {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
@@ -30,6 +29,10 @@ gradlePlugin {
         register("androidLibraryConventionPlugin") {
             id = "gradlePlugins.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidHilt") {
+            id = "gradlePlugins.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
         }
     }
 }
