@@ -22,7 +22,7 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
 
 private fun ApplicationExtension.configureDefaultConfig() {
     defaultConfig {
-        applicationId = "com.sample.gradleplugins"
+        applicationId = "uz.megasoft.mymulti_module"
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -35,6 +35,6 @@ private fun ApplicationExtension.configureDefaultConfig() {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.2"
     }
 }
